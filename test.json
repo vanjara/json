@@ -1,0 +1,34 @@
+{
+ "Does it have 4 legs?": {
+  "No": "Is it carnivorous?",
+  "Yes": "Does it have stripes?"
+ },
+ "Does it have stripes?": {
+  "No": "Is it a lion?",
+  "Yes": "Is it a zebra?"
+ },
+ "Is it a giraffe?": {
+  "No": "AnswerLose",
+  "Yes": "AnswerWin"
+ },
+ "Is it a lion?": {
+  "No": "AnswerLose",
+  "Yes": "AnswerWin"
+ },
+ "Is it a snake?": {
+  "No": "AnswerLose",
+  "Yes": "AnswerWin"
+ },
+ "Is it a worm?": {
+  "No": "AnswerLose",
+  "Yes": "AnswerWin"
+ },
+ "Is it a zebra?": {
+  "No": "AnswerLose",
+  "Yes": "AnswerWin"
+ },
+ "Is it carnivorous?": {
+  "No": "Is it a worm?",
+  "Yes": "Is it a snake?"
+ }
+}
