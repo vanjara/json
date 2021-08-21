@@ -20,47 +20,44 @@ func main() {
 
 	// Question struct to map to the Yes and No responses
 	type Question struct {
-		Yes string // what question is next, if answer is yes
-		No  string // what question is next, if answer is no
+		Yes string `json:"Yes"`
+		No  string `json:"No"`
 	}
-
-	//var StartingData map[string]Question
 
 	content, err := ioutil.ReadFile("./data.json")
 	if err != nil {
 		log.Fatal("Error when opening file: ", err)
 	}
 
-	// Now let's unmarshall the data into `payload`
-	var StartingData map[string]interface{}
+	// Now let's unmarshall the data into StartingData
+	var StartingData map[string]Question
 	err = json.Unmarshal(content, &StartingData)
 	if err != nil {
 		log.Fatal("Error during Unmarshal(): ", err)
 	}
 
 	// Let's print the unmarshalled data!
-	//log.Printf("origin: %s\n", payload["Does it have 4 legs?"])
-	log.Printf("StartingData: %+v\n", StartingData)
+	//log.Printf("StartingData: %+v\n", StartingData)
 
 	pq := "Does it have stripes?"
-	//qNewAnimal := "Is it a tiger?"
-	//qDistinctive := "Is it a predator?"
-	qPrevious := StartingData[pq]
-	log.Printf("%+v", qPrevious)
-	log.Print(len(StartingData))
+	qNewAnimal := "Is it a tiger?"
+	qDistinctive := "Is it a predator?"
 
-	// StartingData[qDistinctive] = Question{
-	// 	Yes: qNewAnimal,
-	// 	No:  g.StartingData[pq].Yes,
-	// }
+	var newQ Question
+	newQ.Yes = qDistinctive
+	newQ.No = StartingData[pq].No
 
-	// StartingData[qPrevious] = Question{
-	// 	Yes: qDistinctive,
-	// }
+	StartingData[qDistinctive] = Question{
+		Yes: qNewAnimal,
+		No:  StartingData[pq].Yes,
+	}
 
-	// StartingData[pq] = qPrevious
+	StartingData[pq] = newQ
+	StartingData[qNewAnimal] = Question{
+		Yes: "AnswerWin",
+		No:  "AnswerLose",
+	}
 
-	//log.Printf("StartingData: %+v\n", StartingData)
 	file, _ := json.MarshalIndent(StartingData, "", " ")
 
 	_ = ioutil.WriteFile("test.json", file, 0644)

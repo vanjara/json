@@ -1,34 +1,42 @@
 {
  "Does it have 4 legs?": {
-  "No": "Is it carnivorous?",
-  "Yes": "Does it have stripes?"
+  "Yes": "Does it have stripes?",
+  "No": "Is it carnivorous?"
  },
  "Does it have stripes?": {
-  "No": "Is it a lion?",
-  "Yes": "Is it a zebra?"
+  "Yes": "Is it a predator?",
+  "No": "Is it a lion?"
  },
  "Is it a giraffe?": {
-  "No": "AnswerLose",
-  "Yes": "AnswerWin"
+  "Yes": "AnswerWin",
+  "No": "AnswerLose"
  },
  "Is it a lion?": {
-  "No": "AnswerLose",
-  "Yes": "AnswerWin"
+  "Yes": "AnswerWin",
+  "No": "AnswerLose"
+ },
+ "Is it a predator?": {
+  "Yes": "Is it a tiger?",
+  "No": "Is it a zebra?"
  },
  "Is it a snake?": {
-  "No": "AnswerLose",
-  "Yes": "AnswerWin"
+  "Yes": "AnswerWin",
+  "No": "AnswerLose"
+ },
+ "Is it a tiger?": {
+  "Yes": "AnswerWin",
+  "No": "AnswerLose"
  },
  "Is it a worm?": {
-  "No": "AnswerLose",
-  "Yes": "AnswerWin"
+  "Yes": "AnswerWin",
+  "No": "AnswerLose"
  },
  "Is it a zebra?": {
-  "No": "AnswerLose",
-  "Yes": "AnswerWin"
+  "Yes": "AnswerWin",
+  "No": "AnswerLose"
  },
  "Is it carnivorous?": {
-  "No": "Is it a worm?",
-  "Yes": "Is it a snake?"
+  "Yes": "Is it a snake?",
+  "No": "Is it a worm?"
  }
 }
